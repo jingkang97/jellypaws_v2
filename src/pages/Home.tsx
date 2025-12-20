@@ -1,6 +1,5 @@
 import CurvedLoop from "@/components/CurvedLoop";
 import Lanyard from "@/components/Lanyard";
-import React from "react";
 
 export default function Home() {
   return (

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { Canvas, extend, useFrame } from "@react-three/fiber";
@@ -21,7 +22,7 @@ import * as THREE from "three";
 
 // replace with your own imports, see the usage snippet for details
 import cardGLB from "@/assets/card.glb";
-import lanyard from "@/assets/jelly_yellow.png";
+import lanyard from "@/assets/lanyard.png";
 
 import "./Lanyard.css";
 
@@ -197,7 +198,7 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }: BandProps) {
   });
 
   curve.curveType = "chordal";
-  texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+  (texture as any).wrapS = (texture as any).wrapT = THREE.RepeatWrapping;
 
   return (
     <>
@@ -280,7 +281,9 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }: BandProps) {
         </RigidBody>
       </group>
       <mesh ref={band}>
+        {/* @ts-ignore */}
         <meshLineGeometry />
+        {/* @ts-ignore */}
         <meshLineMaterial
           color="white"
           depthTest={false}
