@@ -22,7 +22,7 @@ import * as THREE from "three";
 
 // replace with your own imports, see the usage snippet for details
 import cardGLB from "@/assets/card.glb";
-import lanyard from "@/assets/lanyard.png";
+import lanyard from "@/assets/lanyard_string.png";
 
 import "./Lanyard.css";
 
