@@ -10,20 +10,6 @@ export default function App() {
     splineRef.current = splineApp;
   };
 
-  const handleButtonClick = () => {
-    if (splineRef.current) {
-      // Trigger a Spline event
-      // Replace "eventName" with your actual event name from Spline
-      splineRef.current.emitEvent("eventName");
-
-      // Or navigate to a frame:
-      // splineRef.current.goToFrameByName("FrameName");
-
-      // Or trigger an animation:
-      // splineRef.current.play();
-    }
-  };
-
   return (
     <div className="relative w-screen h-screen">
       {/* Loading spinner */}
@@ -43,23 +29,6 @@ export default function App() {
           onLoad={handleSplineLoad}
         />
       </div>
-      {/* <div className="relative z-10 w-full h-full flex flex-col items-center justify-center gap-8">
-        <h1 className="text-5xl font-bold text-white text-center drop-shadow-lg">
-          JellyPaws
-        </h1>
-        <h2 className="text-5xl font-bold text-white text-center drop-shadow-lg">
-          Discover your true flavor!
-        </h2>
-
-        <div className="flex gap-4">
-          <button
-            onClick={handleButtonClick}
-            className="px-8 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition-colors drop-shadow-lg"
-          >
-            Start Journey
-          </button>
-        </div>
-      </div> */}
     </div>
   );
 }
