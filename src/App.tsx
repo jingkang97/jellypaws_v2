@@ -1,12 +1,9 @@
 import "./App.css";
-import SplineTest from "./components/SplineTest";
-
+import Home from "./pages/Home";
 function App() {
   return (
-    <div className="bg-[#B3F1F1] h-screen w-screen overflow-hidden">
-      {/* <Home /> */}
-      {/* <Loading /> */}
-      <SplineTest />
+    <div className="bg-[rgb(179,241,241)] h-screen w-screen overflow-hidden">
+      <Home />
     </div>
   );
 }

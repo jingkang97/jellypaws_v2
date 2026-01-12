@@ -1,0 +1,71 @@
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.paw-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.paw-base {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.paw-base img {
+  width: 100px;
+  height: 100px;
+}
+
+.paw {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paw img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Position paws around the base */
+.paw-top-right {
+  top: 90px;
+  right: 50px;
+}
+
+.paw-top-left {
+  top: 90px;
+  left: 50px;
+}
+
+.paw-top-center-left {
+  top: 40px;
+  right: 60%;
+  transform: translateX(50%);
+}
+
+.paw-top-center-right {
+  top: 40px;
+  left: 60%;
+  transform: translateX(-50%);
+}
+
+.loading-text {
+  margin-top: -80px;
+  font-size: 3rem;
+  font-weight: 500;
+  color: #333;
+  font-family: "Cherry Bomb One", sans-serif;
+}
