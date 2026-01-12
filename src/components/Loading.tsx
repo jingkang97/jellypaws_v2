@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import pawbase from "../assets/pawbase.svg";
 import paw1 from "../assets/paw1.svg";
@@ -14,7 +14,6 @@ export default function Loading() {
   const paw3Ref = useRef(null);
   const paw4Ref = useRef(null);
   const loadingTextRef = useRef<HTMLDivElement>(null);
-  const [showHome, setShowHome] = useState(false);
 
   const loadingTexts = [
     "mixing jelly...",
