@@ -16,7 +16,7 @@ const Home = () => {
         scale: 1,
         opacity: 1,
         duration: 1.2,
-        delay: 12, // ⏱️ 10 seconds delay
+        delay: 11, // ⏱️ 10 seconds delay
         ease: "elastic.out(1, 0.6)", // jelly feel
       }
     );
