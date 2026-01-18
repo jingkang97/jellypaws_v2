@@ -1,28 +1,41 @@
 import { useState, useRef } from "react";
 import Spline from "@splinetool/react-spline";
-import Loading from "./Loading";
+import LoadingV2 from "./LoadingV2";
 
 export default function SplineComponent() {
   const [isLoading, setIsLoading] = useState(true);
-  const splineRef = useRef<any>(null);
+  const splineRef = useRef(null);
+  const loadTimeRef = useRef(Date.now());
 
   const handleSplineLoad = (splineApp: any) => {
-    setIsLoading(false);
     splineRef.current = splineApp;
+
+    const elapsed = Date.now() - loadTimeRef.current;
+    const MIN_LOADING_TIME = 10000;
+
+    const remainingTime = Math.max(MIN_LOADING_TIME - elapsed, 0);
+
+    setTimeout(() => {
+      setIsLoading(false);
+    }, remainingTime);
   };
 
   return (
     <div className="relative w-screen h-screen">
-      {/* Loading spinner */}
-      {isLoading && <Loading />}
-
-      {/* Spline scene as background */}
+      {/* Spline ALWAYS mounts */}
       <div className="absolute inset-0 w-full h-full">
         <Spline
-          scene="https://prod.spline.design/8oHlWu7JWnaNyDhj/scene.splinecode"
+          scene="https://prod.spline.design/TmSrwU5hIY1xCCQ8/scene.splinecode"
           onLoad={handleSplineLoad}
         />
       </div>
+
+      {/* Loading overlay */}
+      {isLoading && (
+        <div className="absolute inset-0 z-20">
+          <LoadingV2 />
+        </div>
+      )}
     </div>
   );
 }

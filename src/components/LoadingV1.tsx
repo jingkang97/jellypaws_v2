@@ -7,7 +7,7 @@ import paw3 from "../assets/paw3.svg";
 import paw4 from "../assets/paw4.svg";
 import "../styles/paw.css";
 
-export default function Loading() {
+export default function LoadingV1() {
   const pawBaseRef = useRef(null);
   const paw1Ref = useRef(null);
   const paw2Ref = useRef(null);
