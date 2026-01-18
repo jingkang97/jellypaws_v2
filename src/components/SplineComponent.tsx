@@ -7,9 +7,9 @@ export default function SplineComponent() {
   const [isLoading, setIsLoading] = useState(true);
   const splineRef = useRef(null);
   const loadTimeRef = useRef(Date.now());
-  const loadingRef = useRef(null);
+  const loadingRef = useRef<HTMLDivElement>(null);
 
-  const handleSplineLoad = (splineApp) => {
+  const handleSplineLoad = (splineApp: any) => {
     splineRef.current = splineApp;
 
     const elapsed = Date.now() - loadTimeRef.current;
@@ -29,8 +29,9 @@ export default function SplineComponent() {
         duration: 1.2,
         ease: "power2.out",
         onComplete: () => {
-          // optional: remove from layout entirely
-          loadingRef.current.style.display = "none";
+          if (loadingRef.current) {
+            loadingRef.current.style.display = "none"; // ✅ now TypeScript knows `style` exists
+          }
         },
       });
     }
